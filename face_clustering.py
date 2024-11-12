@@ -68,7 +68,7 @@ logger.info("Saving faces in largest cluster to output folder...")
 for i, cluster in enumerate(clusters):
     if len(cluster) > args.cluster_size_threshold:
         cluster_folder_path = os.path.join(args.output_folder_path, str(labels[i]))
-        if not os.path.isdir(cluster):
+        if not os.path.isdir(cluster_folder_path):
             os.makedirs(cluster_folder_path)
         for j, pair in enumerate(cluster):
             img, shape, f = pair
